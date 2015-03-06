@@ -45,7 +45,7 @@ ZSH_THEME="dieter"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git go brew docker)
 
 # User configuration
 
@@ -113,3 +113,7 @@ zle -N down-line-or-local-history
 # Alt go previous word and next word
 bindkey "^[[1;3D" backward-word	# Alt+left arrow
 bindkey "^[[1;3C" forward-word	# Alt+right arrow
+
+# Custom environment variables.
+export GOPATH="${HOME}/code/golang"
+export PATH="${PATH}:${GOPATH}/bin"
