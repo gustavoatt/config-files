@@ -117,3 +117,6 @@ bindkey "^[[1;3C" forward-word	# Alt+right arrow
 # Custom environment variables.
 export GOPATH="${HOME}/code/golang"
 export PATH="${PATH}:${GOPATH}/bin"
+
+# Source custom plugins
+# source bash_utils.sh
