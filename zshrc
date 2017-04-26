@@ -118,5 +118,8 @@ bindkey "^[[1;3C" forward-word	# Alt+right arrow
 export GOPATH="${HOME}/code/golang"
 export PATH="${PATH}:${GOPATH}/bin"
 
+# Powerline for Tmux
+export POWERLINE_CONFIG_COMMAND="/Users/gustavoatt/Library/Python/2.7/bin/powerline-config"
+
 # Source custom plugins
 # source bash_utils.sh
