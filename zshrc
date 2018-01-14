@@ -5,7 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="dieter"
+# ZSH_THEME="xxf"
+ZSH_THEME="geometry/geometry"
+GEOMETRY_PROMPT_PLUGINS=(virtualenv exec_time jobs git)
+GEOMETRY_COLOR_GIT_BRANCH=yellow
+GEOMETRY_PROMPT_PREFIX="" 
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +49,7 @@ ZSH_THEME="dieter"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git go brew docker)
+plugins=(git go brew docker docker-compose pip tmux vagrant heroku zsh-completions aws)
 
 # User configuration
 
@@ -121,5 +125,26 @@ export PATH="${PATH}:${GOPATH}/bin"
 # Powerline for Tmux
 export POWERLINE_CONFIG_COMMAND="/Users/gustavoatt/Library/Python/2.7/bin/powerline-config"
 
+export PATH="/Users/gustavotorres/anaconda3/bin:$PATH"
+
 # Source custom plugins
 # source bash_utils.sh
+
+source <(kubectl completion zsh)
+
+# Load rbenv automatically by appending
+eval "$(rbenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gustavotorres/code/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/gustavotorres/code/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gustavotorres/code/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/gustavotorres/code/google-cloud-sdk/completion.zsh.inc'; fi
+
+autoload -U compinit && compinit
+
+# Syntax highlight, should be always at the end
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# added by travis gem
+[ -f /Users/gustavotorres/.travis/travis.sh ] && source /Users/gustavotorres/.travis/travis.sh
